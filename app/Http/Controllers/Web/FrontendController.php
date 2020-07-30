@@ -15,4 +15,13 @@ class FrontendController extends Controller
 
         return view('frontend.index')->with(array_merge($this->data, $data));    
     }
+
+    public function post()
+    {
+        $data = [
+            
+        ];
+
+        return view('frontend.single-post')->with(array_merge($this->data, $data));    
+    }
 }

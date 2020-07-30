@@ -13,7 +13,7 @@ class CateogryUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class CateogryUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'name' => 'required|unique:news_types,name,'.$this->route('id'),
+            'category_photo' => 'mimes:jpg,jpeg,png|max:1024'
         ];
+
+        return $rules;
     }
 }

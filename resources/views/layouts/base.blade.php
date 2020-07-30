@@ -51,6 +51,8 @@
     <script src="{{ asset('assets/js/detect.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
     <script src="{{ asset('assets/js/vertical-menu.js') }}"></script>
+    {{-- submit form js --}}
+    <script src="{{ asset('assets/js/submit-form.js') }}"></script>
     <!-- Switchery js -->
     <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
     <!-- Core js -->

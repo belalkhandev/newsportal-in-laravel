@@ -15,3 +15,7 @@
 .page-top-clear {
     margin-top: 70px;
 }
+
+.has-error  .form-control {
+    border-color: #f7a49e !important;
+}

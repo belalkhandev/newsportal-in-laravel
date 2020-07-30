@@ -23,13 +23,13 @@
                         <span class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="slug">Custom Slug</label>
-                        <input type="text" name="slug" class="form-control" placeholder="e.g. international-news" id="slug">
+                        <label for="">Category Photo</label> <br>
+                        <input type="file" name="category_photo"><br>
                         <span class="text-danger"></span>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Save Category</button>
+                    <button class="btn btn-primary" type="submit" onclick="submit_form(this, event)">Save Category</button>
                 </div>
                 {!! Form::close() !!}
             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\CateogryStoreRequest;
 use App\Http\Requests\Category\CateogryUpdateRequest;
 use App\Models\NewsType;
+use App\Services\Utility;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -33,7 +34,20 @@ class CategoryController extends Controller
 
     public function store(CateogryStoreRequest $request)
     {
+        // upload photo
+        $path = null;
+        if($request->hasFile('category_photo')) {
+            $path = Utility::file_upload($request, 'category_photo', 'categories');
+        }
+        // store category
+        $category = new NewsType();
+        $category->name = $request->get('name');
+        $category->description = $request->get('description');
+        $category->photo = $path;
 
+        if ($category->save()) {
+            dd('saved');
+        }
     }
 
     public function edit($id)

@@ -13,7 +13,7 @@ class CateogryStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class CateogryStoreRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'name' => 'required',
+            'category_photo' => 'mimes:jpg,jpeg,png|max:1024'
         ];
+
+        return $rules;
     }
 }

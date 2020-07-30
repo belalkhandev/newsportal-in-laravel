@@ -18,6 +18,7 @@ class CreateNewsSubtypesTable extends Migration
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('news_type_id');
             $table->string('name');
+            $table->text('description')->nullable();
             $table->string('photo')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();            

@@ -10,8 +10,8 @@ class DashboardController extends Controller
     public function index()
     {
         $data = [
-            'page_title' => 'Dashboard | Home Page',
-            'page_header' => 'Dashboard | Home Page',
+            'page_title' => 'Dashboard',
+            'page_header' => 'Dashboard',
             'page_desc' => 'Home page of the dashboard',
         ];
 

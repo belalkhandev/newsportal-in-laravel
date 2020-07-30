@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-12">
                 <div class="mobile-logobar">
-                    <a href="index.html" class="mobile-logo"><img src="assets/img/logo.png" class="img-fluid"
+                    <a href="index.html" class="mobile-logo"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid"
                             alt="logo"></a>
                 </div>
                 <div class="mobile-togglebar">
@@ -106,7 +106,7 @@
                                 <div class="dropdown">
                                     <a class="dropdown-toggle" href="#" role="button" id="profilelink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                            src="assets/images/users/profile.svg" class="img-fluid"
+                                            src="{{ asset('assets/images/users/profile.svg') }}" class="img-fluid"
                                             alt="profile"><span
                                             class="feather icon-chevron-down live-icon"></span></a>
                                     <div class="dropdown-menu dropdown-menu-right"
@@ -120,17 +120,17 @@
                                             <ul class="list-unstyled mb-0">
                                                 <li class="media dropdown-item">
                                                     <a href="#" class="profile-icon"><img
-                                                            src="assets/images/svg-icon/user.svg"
+                                                            src="{{ asset('assets/images/svg-icon/user.svg') }}"
                                                             class="img-fluid" alt="user">My Profile</a>
                                                 </li>
                                                 <li class="media dropdown-item">
                                                     <a href="#" class="profile-icon"><img
-                                                            src="assets/images/svg-icon/email.svg"
+                                                            src="{{ asset('assets/images/svg-icon/email.sv') }}g"
                                                             class="img-fluid" alt="email">Email</a>
                                                 </li>
                                                 <li class="media dropdown-item">
                                                     <a href="{{ route('logout') }}" class="profile-icon"><img
-                                                            src="assets/images/svg-icon/logout.svg"
+                                                            src="{{ asset('assets/images/svg-icon/logout.svg') }}"
                                                             class="img-fluid" alt="logout">Logout</a>
                                                 </li>
                                             </ul>
@@ -147,24 +147,26 @@
         <!-- End row -->
     </div>
     <!-- End Topbar -->
+    
+    @if($page_bc)
     <!-- Start Breadcrumbbar -->
     <div class="breadcrumbbar">
         <div class="row align-items-center">
             <div class="col-md-8 col-lg-8">
                 <h4 class="page-title">@yield('page_title', $page_title)</h4>
-                <div class="breadcrumb-list">
+                
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="breadcrumb-list text-right">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">{{ $page_title }}</a></li>
-                        
                     </ol>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4">
-                <div class="widgetbar">
-                    {{-- <button class="btn btn-primary-rgba"><i class="feather icon-plus mr-2"></i>Actions</button> --}}
                 </div>
             </div>
         </div>
     </div>
     <!-- End Breadcrumbbar -->
+    @else
+        <div class="page-top-clear"></div>
+    @endif

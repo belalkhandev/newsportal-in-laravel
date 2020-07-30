@@ -10,7 +10,8 @@ class FrontendController extends Controller
     public function index()
     {
         $data = [
-            
+            'page_title' => 'Home Page',
+            'page_header' => 'Home Page',
         ];
 
         return view('frontend.index')->with(array_merge($this->data, $data));    

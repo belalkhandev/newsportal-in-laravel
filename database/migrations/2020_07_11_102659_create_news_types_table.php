@@ -17,6 +17,7 @@ class CreateNewsTypesTable extends Migration
             $table->bigIncrements('id');
             $table->string('slug')->nullable();
             $table->string('name');
+            $table->text('description')->nullable();
             $table->string('photo')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();

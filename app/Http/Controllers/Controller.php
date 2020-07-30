@@ -27,6 +27,7 @@ class Controller extends BaseController
             'page_title' => 'Laravel times | Newsportal website',
             'page_header' => 'Dashboard',
             'page_desc' => 'Newsportal website home page',
+            'page_bc' => false
         ];
     }
 }

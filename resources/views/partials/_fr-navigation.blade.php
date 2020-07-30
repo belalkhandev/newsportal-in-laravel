@@ -3,8 +3,8 @@
     <div class="container">
         <div class="navigation">
             <ul class="main-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="">International</a></li>
+                <li><a href="{{ route('fr.home') }}">Home</a></li>
+                <li><a href="{{ route('fr.category') }}">International</a></li>
                 <li><a href="">Sports</a></li>
                 <li><a href="">Opinion</a></li>
                 <li><a href="">Entertainment</a></li>

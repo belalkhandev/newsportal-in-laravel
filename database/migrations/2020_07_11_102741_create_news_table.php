@@ -18,6 +18,7 @@ class CreateNewsTable extends Migration
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('news_type_id');
+            $table->unsignedBigInteger('news_subtype_id');
             $table->unsignedBigInteger('media_id')->nullable();
             $table->string('title');
             $table->text('content');
@@ -28,6 +29,7 @@ class CreateNewsTable extends Migration
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('news_type_id')->references('id')->on('news_types')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('news_subtype_id')->references('id')->on('news_subtypes')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('media_id')->references('id')->on('media')->onUpdate('cascade')->onDelete('cascade');
         });
     }

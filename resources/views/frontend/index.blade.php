@@ -6,7 +6,7 @@
         <div class="container">
             <div class="top-newses">
                 <div class="top-news">
-                    <a href="#">
+                    <a href="{{ route('fr.post') }}">
                         <div class="top-news-img">
                             <img src="https://www.jugantor.com/assets/news_photos/2020/04/30/image-303197-1588263959.jpg" alt="">
                         </div>

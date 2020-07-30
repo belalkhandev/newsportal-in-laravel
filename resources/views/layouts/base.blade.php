@@ -38,13 +38,7 @@
                 @yield('base.content')
             </div>
             <!-- End Contentbar -->
-            <!-- Start Footerbar -->
-            <div class="footerbar">
-                <footer class="footer">
-                    <p class="mb-0">© 2019 Orbiter - All Rights Reserved.</p>
-                </footer>
-            </div>
-            <!-- End Footerbar -->
+            @include('partials._footer')
         </div>
         <!-- End Rightbar -->
     </div>

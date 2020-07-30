@@ -8,6 +8,6 @@
 */
 
 // LaravelTimes Newsportal frontend routes
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Web')->group(function () {
+    Route::get('/', 'FrontendController@index')->name('fr.home');
 });

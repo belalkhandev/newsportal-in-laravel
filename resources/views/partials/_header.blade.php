@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-12">
                 <div class="mobile-logobar">
-                    <a href="index.html" class="mobile-logo"><img src="assets/images/logo.svg" class="img-fluid"
+                    <a href="index.html" class="mobile-logo"><img src="assets/img/logo.png" class="img-fluid"
                             alt="logo"></a>
                 </div>
                 <div class="mobile-togglebar">

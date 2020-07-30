@@ -18,7 +18,7 @@
             </div>
             <div class="header-timebox text-center">
                 <p>
-                    <span class="timebox-item">Friday</span>
+                    <span class="timebox-item">{{ Carbon\Carbon::now()->day }}</span>
                     <span class="timebox-item">April 17, 2020</span>
                     <span class="timebox-item">Shaaban 24, 1441</span>
                     <span class="timebox-item">Boishakh 4, 1427</span>

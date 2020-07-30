@@ -17,12 +17,32 @@
         <div class="navigationbar">
             <ul class="vertical-menu">
                 <li>
+                    <a href="{{ route('admin') }}">
+                      <img src="assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="dashboard">
+                      <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-title">Category Manage</li>                                       
+                <li>
                     <a href="javaScript:void();">
-                      <img src="assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="dashboard"><span>Dashboard</span><i class="feather icon-chevron-right pull-right"></i>
+                        <img src="assets/images/svg-icon/basic.svg" class="img-fluid" alt="basic">
+                      <span>Category</span>
+                      <i class="feather icon-chevron-right pull-right"></i>
                     </a>
                     <ul class="vertical-submenu">
-                        <li><a href="index.html">CRM</a></li>
-                        <li><a href="dashboard-ecommerce.html">eCommerce</a></li>
+                        <li><a href="index.html">Add new</a></li>
+                        <li><a href="dashboard-ecommerce.html">All Category</a></li>
+                    </ul>
+                </li>                                        
+                <li>
+                    <a href="javaScript:void();">
+                        <img src="assets/images/svg-icon/basic.svg" class="img-fluid" alt="basic">
+                      <span>Sub Category</span>
+                      <i class="feather icon-chevron-right pull-right"></i>
+                    </a>
+                    <ul class="vertical-submenu">
+                        <li><a href="index.html">Add new</a></li>
+                        <li><a href="dashboard-ecommerce.html">All Category</a></li>
                     </ul>
                 </li>                                        
             </ul>

@@ -24,4 +24,13 @@ class FrontendController extends Controller
 
         return view('frontend.post')->with(array_merge($this->data, $data));    
     }
+
+    public function category()
+    {
+        $data = [
+            
+        ];
+
+        return view('frontend.category')->with(array_merge($this->data, $data));    
+    }
 }

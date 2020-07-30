@@ -12,7 +12,9 @@
     <div class="header">
         <div class="container">
             <div class="logo text-center">
-                <a href=""><img src="assets/fr/img/logo.png" alt=""></a>
+                <a href="{{ route('fr.home') }}">
+                    <img src="assets/fr/img/logo.png" alt="">
+                </a>
             </div>
             <div class="header-timebox text-center">
                 <p>

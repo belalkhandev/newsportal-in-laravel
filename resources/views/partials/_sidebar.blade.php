@@ -4,8 +4,13 @@
     <div class="sidebar">
         <!-- Start Logobar -->
         <div class="logobar">
-            <a href="{{ route('admin') }}" class="logo logo-large"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="logo"></a>
-            <a href="{{ route('admin') }}" class="logo logo-small"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="logo"></a>
+            <a href="{{ route('fr.home') }}" class="logo logo-large" target="_blank">
+                <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="logo">
+            </a>
+            <a href="{{ route('admin') }}" class="logo logo-small">
+                {{-- <img src="{{ asset('assets/img/small_logo.png') }}" class="img-fluid" alt="logo"> --}}
+                <b>L.T</b>
+            </a>
         </div>
         <!-- End Logobar -->
         <!-- Start Navigationbar -->

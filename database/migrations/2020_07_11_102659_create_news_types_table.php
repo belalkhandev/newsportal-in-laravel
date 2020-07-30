@@ -15,6 +15,7 @@ class CreateNewsTypesTable extends Migration
     {
         Schema::create('news_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('slug')->nullable();
             $table->string('name');
             $table->unsignedBigInteger('parent_news_type_id')->nullable();
             $table->boolean('status');

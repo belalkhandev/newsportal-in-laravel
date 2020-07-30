@@ -22,6 +22,6 @@ class FrontendController extends Controller
             
         ];
 
-        return view('frontend.single-post')->with(array_merge($this->data, $data));    
+        return view('frontend.post')->with(array_merge($this->data, $data));    
     }
 }

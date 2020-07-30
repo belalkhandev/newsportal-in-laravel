@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
         $superAdmin = new User();
         $superAdmin->name = 'Super Admin';
         $superAdmin->email = 'superadmin@laraveltimes.dev';
+        $superAdmin->username = 'superadmin';
         $superAdmin->password = bcrypt('password');
         $superAdmin->save();
         $superAdmin->attachRole($role_superadmin);
@@ -28,6 +29,7 @@ class UserTableSeeder extends Seeder
         $admin = new User();
         $admin->name = 'Administrator';
         $admin->email = 'admin@laraveltimes.dev';
+        $superAdmin->username = 'admin';
         $admin->password = bcrypt('password');
         $admin->save();
         $admin->attachRole($role_admin);

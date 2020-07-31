@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewsType;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -27,7 +28,8 @@ class Controller extends BaseController
             'page_title' => 'Laravel times | Newsportal website',
             'page_header' => 'Dashboard',
             'page_desc' => 'Newsportal website home page',
-            'page_bc' => false
+            'page_bc' => false,
+            'categories' => NewsType::orderBy('name', 'ASC')->take(5)->get(),
         ];
     }
 }

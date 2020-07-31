@@ -26,8 +26,8 @@
                 <li>
                     <a href="javaScript:void();">
                         <img src="{{ asset('assets/images/svg-icon/basic.svg') }}" class="img-fluid" alt="basic">
-                      <span>Category</span>
-                      <i class="feather icon-chevron-right pull-right"></i>
+                        <span>Category</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
                     </a>
                     <ul class="vertical-submenu">
                         <li><a href="{{ route('admin.category.create') }}">Add new</a></li>
@@ -37,14 +37,62 @@
                 <li>
                     <a href="javaScript:void();">
                         <img src="{{ asset('assets/images/svg-icon/basic.svg') }}" class="img-fluid" alt="basic">
-                      <span>Sub Category</span>
-                      <i class="feather icon-chevron-right pull-right"></i>
+                        <span>Sub Category</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
                     </a>
                     <ul class="vertical-submenu">
                         <li><a href="{{ route('admin.sub-category.create') }}">Add new</a></li>
                         <li><a href="{{ route('admin.sub-category.list') }}">All Sub-Category</a></li>
                     </ul>
-                </li>                                        
+                </li>
+
+                <li class="menu-title">Post Manage</li>
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="fa fa-music"></i>
+                        <span>Media</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
+                    </a>
+                    <ul class="vertical-submenu">
+                        <li><a href="{{ route('admin.sub-category.create') }}">Add new</a></li>
+                        <li><a href="{{ route('admin.sub-category.list') }}">Library</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="fa fa-list-ul"></i>
+                        <span>News</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
+                    </a>
+                    <ul class="vertical-submenu">
+                        <li><a href="{{ route('admin.sub-category.create') }}">Add News</a></li>
+                        <li><a href="{{ route('admin.sub-category.list') }}">News List</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">User Mange</li>
+                <li>
+                    <a href="javaScript:void();">                        
+                        <img src="{{ asset('assets/images/svg-icon/user.svg') }}" class="img-fluid" alt="basic">
+                        <span>System Users</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
+                    </a>
+                    <ul class="vertical-submenu">
+                        <li><a href="#">Add new</a></li>
+                        <li><a href="#">Library</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="fa fa-users"></i>
+                        <span>Public Users</span>
+                        <i class="feather icon-chevron-right pull-right"></i>
+                    </a>
+                    <ul class="vertical-submenu">
+                        <li><a href="#">Add News</a></li>
+                        <li><a href="#">News List</a></li>
+                    </ul>
+                </li>                                     
             </ul>
         </div>
         <!-- End Navigationbar -->

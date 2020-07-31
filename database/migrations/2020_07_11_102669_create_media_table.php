@@ -19,8 +19,9 @@ class CreateMediaTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('news_type_id')->nullable();
             $table->unsignedBigInteger('news_subtype_id')->nullable();
-            $table->string('title');
-            $table->string('media_type')->comment('image, video');
+            $table->string('caption')->nullable();
+            $table->text('description')->nullable();
+            $table->string('media_type')->nullable()->comment('image, video');
             $table->string('file');
             $table->timestamps();
             $table->foreign('news_type_id')->references('id')->on('news_types')->onUpdate('cascade')->onDelete('cascade');

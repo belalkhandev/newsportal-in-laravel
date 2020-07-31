@@ -3,15 +3,12 @@
     <div class="container">
         <div class="navigation">
             <ul class="main-nav">
-                <li><a href="{{ route('fr.home') }}">Home</a></li>
-                <li><a href="{{ route('fr.category') }}">International</a></li>
-                <li><a href="">Sports</a></li>
-                <li><a href="">Opinion</a></li>
-                <li><a href="">Entertainment</a></li>
-                <li><a href="">Lifestyle</a></li>
-                <li><a href="">Business</a></li>
-                <li><a href="">Islam</a></li>
-                <li><a href="">Others</a></li>
+                <li><a href="{{ route('fr.home') }}"><i class="fas-fa-home"></i></a></li>
+                @if($categories)
+                    @foreach ($categories as $category)
+                        <li><a href="{{ route('fr.home') }}">{{ $category->name }}</a></li>
+                    @endforeach
+                @endif
             </ul>
             <div class="navigation-widget">
                 <span><i class="fas fa-search"></i></span>

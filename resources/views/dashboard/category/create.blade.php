@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Add Category</h5>
+                    <h5 class="card-title">{{ $page_title }}</h5>
                     <div class="card-action">
                         <a href="{{ route('admin.category.list') }}" class="btn btn-primary btn-sm">Category List</a>
                     </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="about_category">About Category</label>
-                        <textarea name="description" id="about_category" rows="5" placeholder="Write about category......" class="form-control"></textarea>
+                        <textarea name="description" id="about_category" rows="4" placeholder="Write about category......" class="form-control"></textarea>
                         <span class="text-danger"></span>
                     </div>
                     <div class="form-group">

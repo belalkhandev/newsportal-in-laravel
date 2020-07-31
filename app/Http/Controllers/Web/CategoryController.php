@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\CateogryStoreRequest;
 use App\Http\Requests\Category\CateogryUpdateRequest;
+use App\Models\News;
 use App\Models\NewsType;
 use App\Services\Utility;
 use Illuminate\Http\Request;
@@ -62,12 +63,49 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        
+        $category = NewsType::find($id);
+
+        if (!$category) {
+            abort(404, 'Not found');
+        }
+
+        $data = [
+            'page_title' => 'Update category',
+            'page_header' => 'Update category',
+            'category' => $category,
+        ];
+
+        return view('dashboard.category.edit')->with(array_merge($this->data, $data));
     }
 
     public function update(CateogryUpdateRequest $request, NewsType $news_type, $id)
     {
+        $category = $news_type->find($id);
+        // update & upload photo
+        if($request->hasFile('category_photo')) {
+            if ($category->photo) {
+                unlink($category->photo);
+            }
+            
+            $category->photo = Utility::file_upload($request, 'category_photo', 'categories');
+        }
+        // store category
+        $category->name = $request->get('name');
+        $category->description = $request->get('description');
 
+        if ($category->save()) {
+            return response()->json([
+                'type' => 'success',
+                'title' => 'Update',
+                'message' => 'Category updated successfully',
+            ]);
+        }
+
+        return response()->json([
+            'type' => 'error',
+            'title' => 'Failed',
+            'message' => 'Category failed to update',
+        ]);
     }
 
     public function delete(NewsType $news_type, $id)

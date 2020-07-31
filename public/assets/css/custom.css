@@ -63,3 +63,11 @@ body:hover::-webkit-scrollbar {
     border-left: none !important;
     border-right: none !important;
 }
+
+.form-group label {
+    color: #868686;
+}
+
+.form-control {
+    color: #424242;
+}

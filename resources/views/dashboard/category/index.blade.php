@@ -16,7 +16,7 @@
                         <th>Name</th>
                         <th>Thumbs</th>
                         <th>Description</th>
-                        <th>Action</th>
+                        <th style="min-width: 100px">Action</th>
                     </tr>
                 </thead>
                 <tbody>

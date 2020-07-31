@@ -52,7 +52,7 @@ submit_form = function (t, e) {
                     // resetSummernote();
                     // resetMultiSelect();
                 }
-                Swal.fire({
+                swal({
                     type: type,
                     title: title,
                     text: ret.message,
@@ -134,7 +134,7 @@ function resetMultiSelect() {
  */
 function deleteSwal(t, e) {
     e.preventDefault();
-    Swal.fire({
+    swal({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
         type: 'warning',
@@ -167,7 +167,7 @@ function deleteSwal(t, e) {
                     if (res.type == 'success') {
                         $(t).parents('tr').remove();
                     }
-                    swal.fire(
+                    swal(
                         title,
                         res.msg,
                         type
@@ -191,7 +191,7 @@ function deleteSwal(t, e) {
  */
 function topicFileDelete(t, e) {
     e.preventDefault();
-    Swal.fire({
+    swal({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
         type: 'warning',
@@ -224,7 +224,7 @@ function topicFileDelete(t, e) {
                     if (res.type == 'success') {
                         $(t).parents('.file-item').remove();
                     }
-                    swal.fire(
+                    swal(
                         title,
                         res.msg,
                         type

@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>@yield('page_title', $page_title)</title>
     <!-- Fevicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
     <!-- Start css -->
-    <!-- Switchery css -->
     <link href="{{ asset('assets/plugins/switchery/switchery.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/sweet-alert2/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/flag-icon.min.css') }}" rel="stylesheet" type="text/css">
@@ -55,6 +55,8 @@
     <script src="{{ asset('assets/js/submit-form.js') }}"></script>
     <!-- Switchery js -->
     <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
+    <!-- Sweet-Alert js -->
+    <script src="{{ asset('assets/plugins/sweet-alert2/sweetalert2.min.js') }}"></script>
     <!-- Core js -->
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <!-- End js -->

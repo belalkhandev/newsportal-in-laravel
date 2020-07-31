@@ -46,8 +46,18 @@ class CategoryController extends Controller
         $category->photo = $path;
 
         if ($category->save()) {
-            dd('saved');
+            return response()->json([
+                'type' => 'success',
+                'title' => 'Success',
+                'message' => 'Category added successfully',
+            ]);
         }
+
+        return response()->json([
+            'type' => 'error',
+            'title' => 'Failed',
+            'message' => 'Category failed to add',
+        ]);
     }
 
     public function edit($id)

@@ -71,3 +71,7 @@ body:hover::-webkit-scrollbar {
 .form-control {
     color: #424242;
 }
+
+.form-control::placeholder {
+    color: #d2d2d2;
+}

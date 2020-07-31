@@ -79,3 +79,17 @@
             return $date;
         }
     }
+
+    // active and inactive status
+    if (!function_exists('getStatus')) {
+        function getStatus()
+        {
+    
+            $status = [
+                '1' => 'Active',
+                '0' => 'Inactive',
+            ];
+    
+            return $status;
+        }
+    }

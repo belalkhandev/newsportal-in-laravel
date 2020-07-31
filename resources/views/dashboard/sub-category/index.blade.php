@@ -5,7 +5,7 @@
         <div class="card-header">
             <h5 class="card-title">{{ $page_title }}</h5>
             <div class="card-action">
-                <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add New</a>
+                <a href="{{ route('admin.sub-category.create') }}" class="btn btn-primary">Add New</a>
             </div>
         </div>
         <div class="card-body">
@@ -14,6 +14,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Parent Category</th>
                         <th>Thumbs</th>
                         <th>Description</th>
                         <th style="min-width: 100px">Action</th>
@@ -25,6 +26,7 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $category->name }}</td>
+                                <td>{{ $category->newsType->name }}</td>
                                 <td>
                                     @if($category->photo)
                                         <img src="{{ asset($category->photo) }}" alt="" class="table-img-thumbs">
@@ -36,11 +38,11 @@
                                 
                                 <td class="action-btn-inline">
                                     {{-- edit action --}}
-                                    <a href="{{ route('admin.category.edit', $category->id) }}"  data-toggle="tooltip" data-placement="left" title="Edit" data-original-title="Edit" class="btn btn-round btn-primary-rgba custom-btn-sm">
+                                    <a href="{{ route('admin.sub-category.edit', $category->id) }}"  data-toggle="tooltip" data-placement="left" title="Edit" data-original-title="Edit" class="btn btn-round btn-primary-rgba custom-btn-sm">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     {{-- delete action --}}
-                                    {!! Form::open(['route' => ['admin.category.delete', $category->id], 'method' => 'DELETE', 'class'=>'inline-el']) !!}
+                                    {!! Form::open(['route' => ['admin.sub-category.delete', $category->id], 'method' => 'DELETE', 'class'=>'inline-el']) !!}
                                         <button type="submit" class="btn btn-round btn-danger-rgba custom-btn-sm" onclick="deleteSwal(this, event)"  data-toggle="tooltip" data-placement="left" title="Delete" data-original-title="Delete">
                                             <i class="fa fa-trash"></i>
                                         </button>

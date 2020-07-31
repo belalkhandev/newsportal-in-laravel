@@ -4,7 +4,7 @@ namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CateogryStoreRequest extends FormRequest
+class SubCategoryUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class CateogryStoreRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name' => 'required|unique:news_types,name',
+            'name' => 'required|unique:news_subtypes,name,'.$this->route('id'),
+            'category' => 'required',
             'category_photo' => 'mimes:jpg,jpeg,png|max:1024'
         ];
 

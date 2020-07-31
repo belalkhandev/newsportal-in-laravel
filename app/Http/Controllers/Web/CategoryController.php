@@ -45,6 +45,7 @@ class CategoryController extends Controller
         $category->name = $request->get('name');
         $category->description = $request->get('description');
         $category->photo = $path;
+        $category->status = $request->get('status');
 
         if ($category->save()) {
             return response()->json([
@@ -92,6 +93,7 @@ class CategoryController extends Controller
         // store category
         $category->name = $request->get('name');
         $category->description = $request->get('description');
+        $category->status = $request->get('status');
 
         if ($category->save()) {
             return response()->json([

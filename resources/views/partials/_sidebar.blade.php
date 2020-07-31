@@ -41,8 +41,8 @@
                       <i class="feather icon-chevron-right pull-right"></i>
                     </a>
                     <ul class="vertical-submenu">
-                        <li><a href="index.html">Add new</a></li>
-                        <li><a href="dashboard-ecommerce.html">All Category</a></li>
+                        <li><a href="{{ route('admin.sub-category.create') }}">Add new</a></li>
+                        <li><a href="{{ route('admin.sub-category.list') }}">All Sub-Category</a></li>
                     </ul>
                 </li>                                        
             </ul>

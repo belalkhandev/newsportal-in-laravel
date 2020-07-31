@@ -57,10 +57,11 @@
     <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
     <!-- Sweet-Alert js -->
     <script src="{{ asset('assets/plugins/sweet-alert2/sweetalert2.min.js') }}"></script>
+    {{-- footer scripts --}}    
+    @stack('footer-scripts')
     <!-- Core js -->
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <!-- End js -->
-    @stack('footer-scripts')
 </body>
 
 </html>

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navigation">
             <ul class="main-nav">
-                <li><a href="{{ route('fr.home') }}"><i class="fas-fa-home"></i></a></li>
+                <li><a href="{{ route('fr.home') }}"><i class="fas fa-home"></i> Home</a></li>
                 @if($categories)
                     @foreach ($categories as $category)
                         <li><a href="{{ route('fr.home') }}">{{ $category->name }}</a></li>

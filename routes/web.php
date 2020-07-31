@@ -43,6 +43,16 @@ Route::middleware(['auth'])->group(function () {
                 Route::post('/edit/{id}', 'SubCategoryController@update')->name('admin.sub-category.update');
                 Route::delete('/delete/{id}', 'SubCategoryController@destroy')->name('admin.sub-category.delete');
             });
+
+            // media manage
+            Route::prefix('media')->group(function () {
+                Route::get('/', 'MediaController@index')->name('admin.media.list');
+                Route::get('/create', 'MediaController@create')->name('admin.media.create');
+                Route::post('/create', 'MediaController@store')->name('admin.media.store');
+                Route::get('/edit/{id}', 'MediaController@edit')->name('admin.media.edit');
+                Route::post('/edit/{id}', 'MediaController@update')->name('admin.media.update');
+                Route::delete('/delete/{id}', 'MediaController@destroy')->name('admin.media.delete');
+            });
         });
 
         

@@ -54,8 +54,8 @@
                         <i class="feather icon-chevron-right pull-right"></i>
                     </a>
                     <ul class="vertical-submenu">
-                        <li><a href="{{ route('admin.sub-category.create') }}">Add new</a></li>
-                        <li><a href="{{ route('admin.sub-category.list') }}">Library</a></li>
+                        <li><a href="{{ route('admin.media.create') }}">Add new</a></li>
+                        <li><a href="{{ route('admin.media.list') }}">Library</a></li>
                     </ul>
                 </li> 
                 <li>

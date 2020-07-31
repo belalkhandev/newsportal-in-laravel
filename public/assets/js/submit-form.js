@@ -139,12 +139,13 @@ function deleteSwal(t, e) {
         text: "You won't be able to revert this!",
         type: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#4fa7f3',
-        cancelButtonColor: '#d57171',
-        confirmButtonText: 'Yes, delete it!'
-    }).then(function (stat) {
-
-        if (stat.value != undefined && stat.value) {
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger m-l-10',
+        buttonsStyling: false
+    }).then((willDelete) => {
+        if (willDelete != undefined && willDelete) {
             // $(t).parent('form').submit();
             let form = $(t).parents('form'),
                 action = $(form).attr('action'),
@@ -152,8 +153,7 @@ function deleteSwal(t, e) {
                 btn = $(t).html();
             let formData = $(form).serialize();
 
-            $.ajax({
-                url: action,
+            $.ajax(action, {
                 type: method,
                 beforeSend: function () {
                     $(t).attr('disabled', 'disabled');
@@ -182,59 +182,3 @@ function deleteSwal(t, e) {
     });
 }
 
-
-
-/**
- * Delete Function
- * @param t
- * @param e
- */
-function topicFileDelete(t, e) {
-    e.preventDefault();
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#37A000',
-        cancelButtonColor: '#d57171',
-        confirmButtonText: 'Yes, delete it!'
-    }).then(function (stat) {
-
-        if (stat.value != undefined && stat.value) {
-            // $(t).parent('form').submit();
-            let form = $(t).parents('form'),
-                action = $(form).attr('action'),
-                method = $(form).attr('method'),
-                btn = $(t).html();
-            let formData = $(form).serialize();
-
-            $.ajax({
-                url: action,
-                type: method,
-                beforeSend: function () {
-                    $(t).attr('disabled', 'disabled');
-                    $(t).html('<i class="fa fa-spinner fa-spin"></i>');
-                },
-                data: formData,
-                dataType: 'JSON',
-                success: function (res) {
-                    let type = res.type;
-                    let title = res.title;
-                    if (res.type == 'success') {
-                        $(t).parents('.file-item').remove();
-                    }
-                    swal(
-                        title,
-                        res.msg,
-                        type
-                    );
-                },
-                complete: function () {
-                    $(t).removeAttr('disabled');
-                }
-            });
-        }
-
-    });
-}

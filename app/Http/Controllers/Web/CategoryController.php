@@ -108,9 +108,27 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function delete(NewsType $news_type, $id)
+    public function destroy(NewsType $news_type, $id)
     {
+        $category = $news_type->find($id);
 
+        if ($category->photo) {
+            unlink($category->photo);
+        }
+
+        if ($category->delete()) {
+            return response()->json([
+                'type' => 'success',
+                'title' => 'Success!',
+                'message' => 'Category Deleted Successfully'
+            ]);
+        }
+
+        return response()->json([
+            'type' => 'error',
+            'title' => 'Failed!',
+            'message' => 'Failed to Delete Category'
+        ]);
     }
 
 

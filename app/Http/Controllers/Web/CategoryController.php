@@ -62,7 +62,7 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-
+        
     }
 
     public function update(CateogryUpdateRequest $request, NewsType $news_type, $id)

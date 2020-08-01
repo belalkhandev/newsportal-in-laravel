@@ -182,3 +182,59 @@ function deleteSwal(t, e) {
     });
 }
 
+
+/**
+ * Delete Function
+ * @param t
+ * @param e
+ */
+function deleteMediaFileSwal(t, e) {
+    e.preventDefault();
+    swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this File!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete file!',
+        cancelButtonText: 'No, cancel!',
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger m-l-10',
+        buttonsStyling: false
+    }).then((willDelete) => {
+        if (willDelete != undefined && willDelete) {
+            // $(t).parent('form').submit();
+            let form = $(t).parents('form'),
+                action = $(form).attr('action'),
+                method = $(form).attr('method'),
+                btn = $(t).html();
+            let formData = $(form).serialize();
+
+            $.ajax(action, {
+                type: method,
+                beforeSend: function () {
+                    $(t).attr('disabled', 'disabled');
+                    $(t).html('<i class="fa fa-spinner fa-spin"></i>');
+                },
+                data: formData,
+                dataType: 'JSON',
+                success: function (res) {
+                    let type = res.type;
+                    let title = res.title;
+                    if (res.type == 'success') {
+                        $(t).parents('.media-row').remove();
+                    }
+                    swal(
+                        title,
+                        res.msg,
+                        type
+                    );
+                },
+                complete: function () {
+                    $(t).removeAttr('disabled');
+                }
+            });
+        }
+
+    });
+}
+

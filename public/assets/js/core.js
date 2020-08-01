@@ -78,3 +78,4 @@ $(document).ready(function() {
     /* -- Bootstrap Tooltip -- */
     $('[data-toggle="tooltip"]').tooltip();
 });
+

@@ -49,10 +49,16 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/', 'MediaController@index')->name('admin.media.list');
                 Route::get('/create', 'MediaController@create')->name('admin.media.create');
                 Route::post('/create', 'MediaController@store')->name('admin.media.store');
-                Route::get('/edit/{id}', 'MediaController@edit')->name('admin.media.edit');
-                Route::post('/edit/{id}', 'MediaController@update')->name('admin.media.update');
+                Route::post('/edit', 'MediaController@edit')->name('admin.media.edit');
+                Route::post('/update', 'MediaController@update')->name('admin.media.update');
                 Route::delete('/delete/{id}', 'MediaController@destroy')->name('admin.media.delete');
             });
+
+            //ajax find
+            Route::prefix('find')->group(function () {
+                Route::post('/sub-category', 'FindController@getSubCategory')->name('admin.find.sub-category');
+            });
+
         });
 
         

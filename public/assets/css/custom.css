@@ -358,3 +358,80 @@ body:hover::-webkit-scrollbar {
     color: red;
     font-size: 20px;
 }
+
+.media-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2f6fa
+}
+
+.media-title {
+    width: 20%;
+}
+
+.media-head-title {
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+}
+
+.media-row {
+    display: flex;
+}
+
+.media-row-body {
+    width: 20%;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 10px;
+}
+
+.media-head-caption , .media-caption {
+    width: 30%;
+}
+
+.media-head-info , .media-info {
+    width: 40%;
+}
+
+.media-action, .media-head-action {
+    width: 10%;
+}
+
+.media-file img {
+    width: 70%;
+}
+
+.media-info p {
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 0px;
+    color: #5f5f5f;
+}
+
+.media-action {
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.media-edit-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.media-edit-file {
+    width: calc(60% - 20px);
+    margin-right: 20px;    
+    max-height: 370px;
+    overflow-y: auto;
+}
+
+.media-edit-content {
+    width: 40%;
+}
+
+.media-edit-file img {
+    width: 100%;
+}
